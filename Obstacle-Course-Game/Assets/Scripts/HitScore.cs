@@ -16,8 +16,12 @@ public class HitScore : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        hitTimes ++;
-        Debug.Log("You've bumped into an obstacle " + hitTimes + "X times.");
+
+        if (other.gameObject.tag != "Hit"){
+            hitTimes ++;
+            Debug.Log("You've bumped into an obstacle " + hitTimes + "X times.");
+        }
+        
         
     }
 
